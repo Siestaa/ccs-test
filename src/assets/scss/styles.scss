@@ -1,0 +1,17 @@
+//global styles
+@import "general/variables";
+@import "general/fonts";
+@import "general/mixin";
+@import "general/utils";
+@import "general/nouislider";
+@import "general/animation";
+
+
+
+//blocks styles
+
+@import "blocks/header";
+@import "blocks/intro";
+@import "blocks/form";
+@import "blocks/scheme";
+@import "blocks/footer";

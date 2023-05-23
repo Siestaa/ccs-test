@@ -1,0 +1,313 @@
+.form {
+    padding: 121px 0 151px;
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include vp-1023 {
+        padding: 150px 0 100px;
+        max-width: 860px;
+    }
+
+    @include vp-767 {
+        padding: 57px 0 65px;
+        max-width: 520px;
+    }
+}
+
+.form__title {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+    color: $main-white-color;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include vp-767 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.form__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #BBBBBB;
+    margin: 0;
+    margin-bottom: 79px;
+
+    @include vp-1023 {
+        margin-bottom: 50px;
+    }
+
+    @include vp-767 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+.form__field {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0;
+    margin-top: 85px;
+    max-width: 1170px;
+    width: 100%;
+
+    @include vp-1023 {
+        max-width: 860px;
+        margin-top: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include vp-767 {
+        max-width: 520px;
+        grid-template-columns: 100%;
+    }
+}
+
+
+.form__selector {
+    background-color: $form-input-bg-color;
+    color: $form-input-text-color;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 12px 10px;
+    margin: 0;
+    border: 1px solid $main-white-color;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+
+    &--open {
+        background: rgba(61, 64, 80, 0.85);
+        color: $main-white-color;
+        border-color: rgba(61, 64, 80, 0.85);
+        border-radius: 3px 3px 0 0;
+    }
+
+    & input {
+        display: none;
+    }
+
+    &:hover,
+    &:focus-within {
+        outline: 3px solid $main-theme-color;
+    }
+}
+
+.form__current-selector {
+    margin: 0;    
+}
+
+.form__selector-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__selector-more {
+    align-self: center;
+}
+
+.form__selector-list {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    background: rgba(39, 39, 51, 0.9);
+    color: $main-white-color;
+    margin: 0;
+    width: 100%;
+    border: 1px solid #3D4050;
+    border-radius: 0 0 3px 3px;
+    z-index: 2;
+    max-height: 180px;
+    overflow-y: scroll;
+
+    &--hide {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: $bg-footer-color;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        width: 7px;
+        background-color: $main-theme-color;
+        border-radius: 3px;
+    }
+
+    @include vp-1023 {
+        background: rgba(39, 39, 51, 1);
+    }
+}
+
+.form__selector-item {
+    padding: 6px 0 6px 10px;
+    box-sizing: border-box;
+
+    &:hover {
+        color: $main-theme-color;
+    }
+}
+
+.form__input {
+    padding: 12px 10px;
+    background-color: $form-input-bg-color;
+    border: 1px solid $main-white-color;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $form-input-text-color;
+    font-family: $font-family-default;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $form-input-text-color;
+        font-family: $font-family-default;
+    }
+
+    &:hover,
+    &:focus-within {
+        outline: 3px solid $main-theme-color;
+    }
+}
+
+.form__percent {
+    grid-column: 1/3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & input {
+        display: none;
+    }
+
+    & span {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: $form-input-bg-color;
+        align-self: flex-start;
+
+        @include vp-767 {
+            margin-bottom: 10px;
+        }
+    }
+
+    @include vp-767 {
+        grid-column: 1/2;
+    }
+}
+
+.form__slider {
+    width: 100%;
+}
+
+.form__percent-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $main-white-color;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.form__file {
+    display: none;
+}
+
+.form__file-text {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $form-input-text-color;
+    padding: 12px;
+    width: 100%;
+    background-color: $main-white-color;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $main-theme-color;
+    border-radius: 3px;
+    background-color: $main-white-color;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-within {
+        outline: 3px solid $main-theme-color;
+        border: none;
+
+        & .form__file-icon {
+            animation: toggle 3s ease infinite;
+        }
+    }
+
+    @include vp-1023 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    @include vp-767 {
+        grid-column: 1/2;
+        grid-row: auto;
+    }
+}
+
+.form__file-icon {
+    margin-right: 10px;
+}
+
+.form__button {
+    grid-column: 2/3;
+    padding: 14px 0;
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $main-white-color;
+    background-color: $main-theme-color;
+    border: 1px solid $main-white-color;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 26px;
+
+    @include vp-1023 {
+        grid-column: 1/3;
+        width: 50%;
+        text-align: center;
+        margin: 20px auto 0;
+    }
+
+    @include vp-767 {
+        grid-column: 1/2;
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+        background: linear-gradient(-45deg, $main-theme-color, $form-input-text-color, $main-theme-color);
+        background-size: 200% 200%;
+        animation: gradient 4s ease infinite;
+    }
+}
