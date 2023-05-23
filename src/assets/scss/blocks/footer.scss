@@ -16,7 +16,7 @@
 .footer__copyright {
     grid-column: 1/4;
     padding-right: 10px;
-    
+
     @include vp-1023 {
         display: flex;
         justify-content: center;
@@ -122,8 +122,6 @@
             justify-content: center;
             gap: 15px;
         }
-
-        @include vp-767
     }
 
     &-link {
@@ -141,7 +139,7 @@
                 background-color: $main-theme-color;
                 fill: $main-white-color;
             }
-        }       
+        }
     }
 
     &-icon {
