@@ -19,7 +19,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
 const srcPath = 'src/';
-const distPath = 'dist/';
+const distPath = 'build/';
 
 const path = {
   build: {
